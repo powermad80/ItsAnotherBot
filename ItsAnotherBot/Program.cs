@@ -26,6 +26,11 @@ public class Program
         globalCommand.WithName("test-command");
         globalCommand.WithDescription("a test global command for testing purposes");
         await _client.CreateGlobalApplicationCommandAsync(globalCommand.Build());
+
+        var globalCommand2 = new SlashCommandBuilder();
+        globalCommand2.WithName("test-command-2");
+        globalCommand2.WithDescription("if you can do this, the deployment pipeline worked");
+        await _client.CreateGlobalApplicationCommandAsync(globalCommand2.Build());
     }
 
     private async Task SlashCommandHandler(SocketSlashCommand command)
