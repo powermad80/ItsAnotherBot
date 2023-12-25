@@ -22,19 +22,20 @@ public class Program
 
     public async Task ClientReady()
     {
-        var globalCommand = new SlashCommandBuilder();
-        globalCommand.WithName("test-command");
-        globalCommand.WithDescription("a test global command for testing purposes");
-        await _client.CreateGlobalApplicationCommandAsync(globalCommand.Build());
+        // Command already registered
+        //var globalCommand = new SlashCommandBuilder();
+        //globalCommand.WithName("test-command");
+        //globalCommand.WithDescription("a test global command for testing purposes");
+        //await _client.CreateGlobalApplicationCommandAsync(globalCommand.Build());
 
-        var globalCommand2 = new SlashCommandBuilder();
-        globalCommand2.WithName("toast");
-        globalCommand2.WithDescription("if you can do this, the deployment pipeline worked");
-        await _client.CreateGlobalApplicationCommandAsync(globalCommand2.Build());
+        //var globalCommand2 = new SlashCommandBuilder();
+        //globalCommand2.WithName("toast");
+        //globalCommand2.WithDescription("if you can do this, the deployment pipeline worked");
+        //await _client.CreateGlobalApplicationCommandAsync(globalCommand2.Build());
     }
 
     private async Task SlashCommandHandler(SocketSlashCommand command)
     {
-        await command.RespondAsync("You done did the testing command.");
+        await command.RespondAsync("Deployment worked, boss.");
     }
 }
