@@ -4,15 +4,15 @@ Description=Discord bot for automated deployment
 [Service]
 # systemd will run this executable to start the service
 # if /usr/bin/dotnet doesn't work, use `which dotnet` to find correct dotnet executable path
-ExecStart=/usr/bin/dotnet /root/home/ItsAnotherBot/ItsAnotherBot/bin/Release/net6.0/publish/ItsAnotherBot.dll
+ExecStart= /usr/bin/dotnet /root/home/ItsAnotherBot/ItsAnotherBot/bin/Release/net6.0/publish/ItsAnotherBot.dll
 # to query logs using journalctl, set a logical name here
 SyslogIdentifier=ItsAnotherBot
-
+Type=simple
 User=root
-
+WorkingDirectory=/root/home/ItsAnotherBot
+EnvironmentFile=/root/home/secrets/bot_secrets.conf
 # This environment variable is necessary when dotnet isn't loaded for the specified user.
-# To figure out this value, run 'env | grep DOTNET_ROOT' when dotnet has been loaded into your shell.
-Environment=DOTNET_ROOT=/usr/lib64/dotnet
+# To figure out this value, run 'env | grep DOTNET_ROOT' when dotnet has been loaded into your shell
 
 [Install]
 WantedBy=multi-user.target
