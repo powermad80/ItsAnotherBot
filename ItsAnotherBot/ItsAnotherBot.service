@@ -11,9 +11,11 @@ Type=simple
 User=root
 WorkingDirectory=/root/home/ItsAnotherBot
 EnvironmentFile=/root/home/secrets/bot_secrets.conf
+Restart=on-failure
+RestartSec=5s
 # This environment variable is necessary when dotnet isn't loaded for the specified user.
 # To figure out this value, run 'env | grep DOTNET_ROOT' when dotnet has been loaded into your shell
-# Test Comment
+
 
 [Install]
 WantedBy=multi-user.target
