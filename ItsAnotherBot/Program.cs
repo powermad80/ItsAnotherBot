@@ -9,7 +9,7 @@ public class Program
     public async Task MainAsync()
     {
         _client = new DiscordSocketClient();
-        var token = File.ReadAllText("token.txt");
+        var token = Environment.GetEnvironmentVariable("BOT_TOKEN");
 
         _client.Ready += ClientReady;
         _client.SlashCommandExecuted += SlashCommandHandler;
