@@ -4,7 +4,7 @@ Description=Discord bot for automated deployment
 [Service]
 # systemd will run this executable to start the service
 # if /usr/bin/dotnet doesn't work, use `which dotnet` to find correct dotnet executable path
-ExecStart=/usr/bin/dotnet /home/ItsAnotherBot/
+ExecStart=/usr/bin/dotnet /home/ItsAnotherBot/ItsAnotherBot/bin/Release/net6.0/publish/
 # to query logs using journalctl, set a logical name here
 SyslogIdentifier=ItsAnotherBot
 
