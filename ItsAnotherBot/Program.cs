@@ -28,7 +28,7 @@ public class Program
         await _client.CreateGlobalApplicationCommandAsync(globalCommand.Build());
 
         var globalCommand2 = new SlashCommandBuilder();
-        globalCommand2.WithName("test-command-2");
+        globalCommand2.WithName("test-command-two");
         globalCommand2.WithDescription("if you can do this, the deployment pipeline worked");
         await _client.CreateGlobalApplicationCommandAsync(globalCommand2.Build());
     }
