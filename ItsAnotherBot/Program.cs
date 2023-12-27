@@ -1,5 +1,6 @@
 ﻿using Discord;
 using Discord.WebSocket;
+using ItsAnotherBot;
 
 public class Program
 {
@@ -48,6 +49,16 @@ public class Program
 
     private async Task SlashCommandHandler(SocketSlashCommand command)
     {
-        await command.RespondAsync("Deployment worked, boss.");
+
+        switch (command.Data.Name)
+        {
+            case "fortune":
+                await command.RespondAsync(Fortune.fortune());
+                break;
+            default:
+                await command.RespondAsync("Not implemented yet sorry");
+                break;
+        }
     }
+        
 }
